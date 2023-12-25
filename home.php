@@ -1,10 +1,9 @@
 <?php include "bdd/connexion.php"; ?>
 <?php 
 if (isset($_SESSION['user'])) {
-	include 'app/utilisateurs/user.php';
-
-	#recuperer la fonction
-	$user = getUser($_SESSION['user'], $bdd);
+	$recupUser = $bdd->prepare("SELECT * FROM utilisateur where iduser=?");
+	$recupUser->execute([$_SESSION['user']]);
+	$user = $recupUser->fetch();
 	?>
 	<!DOCTYPE html>
 	<html>
