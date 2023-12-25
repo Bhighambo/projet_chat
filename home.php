@@ -32,26 +32,26 @@ if (isset($_SESSION['user'])) {
 				</div>
 				<ul class="list-group mvh-50 overflow-auto">
 					<li class="list-group-item">
-						<a href="chat.php" class="d-flex justify-content-between align-items-center p-2">
+						<a href="chat.php" class="d-flex justify-content-between align-items-center p-2" style="text-decoration: none;">
 							<div class="d-flex align-items-center">
 								<img src="photos/CESAR_20221124_170550.jpg" class="rounded-circle" style="width:10%">
-								<h3 class="fs-xs m-2">Cesar Mabhuluko</h3>
+								<h3 class="fs-xs m-2" style="font-size:20px;">Cesar Mabhuluko</h3>
 							</div>
 						</a>
 					</li>
 					<li class="list-group-item">
-						<a href="chat.php" class="d-flex justify-content-between align-items-center p-2">
+						<a href="chat.php" class="d-flex justify-content-between align-items-center p-2" style="text-decoration: none;">
 							<div class="d-flex align-items-center">
 								<img src="photos/CESAR_20221124_170550.jpg" class="rounded-circle" style="width:10%">
-								<h3 class="fs-xs m-2">Cesar</h3>
+								<h3 class="fs-xs m-2" style="font-size:20px;">Cesar Mabhuluko</h3>
 							</div>
 						</a>
 					</li>
 					<li class="list-group-item">
-						<a href="chat.php" class="d-flex justify-content-between align-items-center p-2">
+						<a href="chat.php" class="d-flex justify-content-between align-items-center p-2" style="text-decoration: none;">
 							<div class="d-flex align-items-center">
 								<img src="photos/CESAR_20221124_170550.jpg" class="rounded-circle" style="width:10%">
-								<h3 class="fs-xs m-2">Cesar</h3>
+								<h3 class="fs-xs m-2" style="font-size:20px;">Cesar Mabhuluko</h3>
 							</div>
 						</a>
 					</li>
