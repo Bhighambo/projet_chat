@@ -25,6 +25,7 @@ function getconversation($user_id, $bdd){
 			//appel des informations
 			array_push($user_data, $allConversation);
 		}
+		return $user_data;
 	}else{
 		$conversation = array();
 		return $conversation;

@@ -1,9 +1,15 @@
 <?php include "bdd/connexion.php"; ?>
 <?php 
 if (isset($_SESSION['user'])) {
+
+	include "app/utilisateurs/conversation.php";
 	$recupUser = $bdd->prepare("SELECT * FROM utilisateur where iduser=?");
 	$recupUser->execute([$_SESSION['user']]);
 	$user = $recupUser->fetch();
+
+
+	$conversation = getconversation($user->iduser, $bdd);
+	print_r($conversation);
 	?>
 	<!DOCTYPE html>
 	<html>
