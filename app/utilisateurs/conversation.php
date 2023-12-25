@@ -12,8 +12,18 @@ function getconversation($user_id, $bdd){
 
 		foreach ($conversation as $conversations) {
 			if($conversations->user1 == $user_id){
-				$sql2 = 
+				$sql2 = "SELECT * FROM utilisateur where iduser=?";
+				$statement2 = $bdd->prepare($sql2);
+				$statement->execute([$conversations->user2]);
+			}else{
+				$sql2 = "SELECT * FROM utilisateur where iduser=?";
+				$statement2 = $bdd->prepare($sql2);
+				$statement->execute([$conversations->user1]);
 			}
+
+			$allConversation = $statement2->fetchAll();
+			//appel des informations
+			array_push($user_data, $allConversation);
 		}
 	}else{
 		$conversation = array();
