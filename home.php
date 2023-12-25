@@ -20,7 +20,7 @@ if (isset($_SESSION['user'])) {
 			<div>
 				<div class="d-flex mb-3 p-3 bg-light justify-content-between align-items-center">
 					<div class="d-flex align-items-center">
-						<img src="photos/JACKSON_conference.jpg" class="w-25 rounded-circle">
+						<img src="photos/<?php echo $user->photo; ?>" class="w-25 rounded-circle">
 						<h3 class="fs-xs m-2" style="font-size: 1rem;"><?php echo $user->nom." ".$user->postnom; ?></h3>
 					</div>
 					<a href="bdd/deconnexion.php" class="btn btn-danger">Deconnexion</a>
