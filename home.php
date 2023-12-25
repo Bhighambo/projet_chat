@@ -1,6 +1,10 @@
 <?php include "bdd/connexion.php"; ?>
 <?php 
 if (isset($_SESSION['user'])) {
+	include 'app/utilisateurs/user.php';
+
+	#recuperer la fonction
+	$user = getUser($_SESSION['user'], $bdd);
 	?>
 	<!DOCTYPE html>
 	<html>
@@ -18,7 +22,7 @@ if (isset($_SESSION['user'])) {
 				<div class="d-flex mb-3 p-3 bg-light justify-content-between align-items-center">
 					<div class="d-flex align-items-center">
 						<img src="photos/JACKSON_conference.jpg" class="w-25 rounded-circle">
-						<h3 class="fs-xs m-2" style="font-size: 1rem;">JACKSON</h3>
+						<h3 class="fs-xs m-2" style="font-size: 1rem;"><?php echo $user->nom; ?></h3>
 					</div>
 					<a href="bdd/deconnexion.php" class="btn btn-danger">Deconnexion</a>
 				</div>
