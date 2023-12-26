@@ -15,7 +15,7 @@ if(isset($_SESSION['mail'])){
 			foreach ($users as $user) {
 				?>
 			    <li class="list-group-item">
-				    <a href="chat.php?user=<?php echo $user->mail; ?>" class="d-flex justify-content-between align-items-center p-2" style="text-decoration: none;">
+				    <a href="chat.php?user=<?php echo $user->iduser; ?>" class="d-flex justify-content-between align-items-center p-2" style="text-decoration: none;">
 					    <div class="d-flex align-items-center">
 							<img src="photos/<?php echo $user->photo; ?>" class="rounded-circle" style="width:10%">
 							<h3 class="fs-xs m-2" style="font-size:20px;"><?php echo $user->nom." ".$user->postnom; ?></h3>

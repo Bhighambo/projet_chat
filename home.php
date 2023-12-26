@@ -45,7 +45,7 @@ if (isset($_SESSION['user'])) {
 						foreach ($conversation as $conversations) {
 						 	?>
 						 	<li class="list-group-item">
-								<a href="chat.php?user=<?php echo $conversations->mail; ?>" class="d-flex justify-content-between align-items-center p-2" style="text-decoration: none;">
+								<a href="chat.php?user=<?php echo $conversations->iduser; ?>" class="d-flex justify-content-between align-items-center p-2" style="text-decoration: none;">
 									<div class="d-flex align-items-center">
 										<img src="photos/<?php echo $conversations->photo; ?>" class="rounded-circle" style="width:10%">
 										<h3 class="fs-xs m-2" style="font-size:20px;"><?php echo $conversations->nom." ".$conversations->postnom; ?></h3>
