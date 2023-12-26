@@ -16,6 +16,22 @@ if (isset($_SESSION['user'])) {
 	</head>
 	<body class="d-flex justify-content-center align-items-center vh-100">
 
+		<div class="w-400 shadow p-4 rounded">
+			<a href="home.php" class="fs-4 link-dark">&#8592;</a>
+
+			<div class="d-flex align-items-center">
+				<img src="photos/CESAR_20221124_170550.jpg" class="rounded-circle" style="width:10%">
+				<h3 class="display-4 fs-sm m-2" style="font-size:20px;">
+					JACKSON <br>
+					<div class="d-flex align-items-center" title="online">
+						<div class="online"></div><small style="color:#bbb; font-size:0.7rem; " class="d-block p-1">En ligne</small>
+					</div>
+				</h3>
+				
+			</div>
+
+		</div>
+
     </body>
 </html>
  <?php
