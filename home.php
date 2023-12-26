@@ -34,10 +34,10 @@ if (isset($_SESSION['user'])) {
 					<a href="bdd/deconnexion.php" class="btn btn-danger">Dec</a>
 				</div>
 				<div class="input-group mb-3">
-					<input type="text" name="" placeholder="Recherche..." class="form-control">
-					<button class="btn btn-primary"><i class="fa fa-search"></i></button>
+					<input type="text" name="" placeholder="Recherche..." class="form-control" id="recherche_input">
+					<button class="btn btn-primary" id="btn_recherche"><i class="fa fa-search"></i></button>
 				</div>
-				<ul class="list-group mvh-50 overflow-auto">
+				<ul id="chatListe" class="list-group mvh-50 overflow-auto">
 					<?php if (!empty($conversation)) {?>
 
 						<?php
@@ -52,7 +52,7 @@ if (isset($_SESSION['user'])) {
 									</div>
 									<?php 
 
-									if (last_seen($conversations->dateI) == "Active") {
+									if (last_seen($conversations->dateI) == 'Active') {
 										?>
 										<div title="online">
 										    <div class="online"></div>
@@ -85,13 +85,39 @@ if (isset($_SESSION['user'])) {
 
 	<script>
 		$(document).ready(function(){
+
+			//recherche
+
+			$("#recherche_input").on("input", function(){
+				var recherche_input = $(this).val();
+				if(recherche_input == "") return;
+				$.post("app/ajax/recherche.php",
+
+				{
+					key: recherche_input
+				},
+				 function(data, status){
+				 	$("#chatListe").html(data);
+				 });
+			});
+
+			$("#btn_recherche").on("click", function(){
+				var recherche_input = $(this).val();
+				if(recherche_input == "") return;
+				$.post("app/ajax/recherche.php",
+
+				{
+					key: recherche_input
+				},
+				 function(data, status){
+				 	$("#chatListe").html(data);
+				 });
+			});
+
 			//la modification automatique
 
 			let lastseenUpadate = function(){
-				$.get("app/ajax/update_last_seen.php", function(data, status){
-					console.log(data);
-
-				});
+				$.get("app/ajax/update_last_seen.php");
 			}
 			lastseenUpadate();
 

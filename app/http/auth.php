@@ -19,6 +19,7 @@ elseif(!empty($_POST["user_mail"])){
     $recupUser->execute([$user_mail, $user_password]);
     if($donnees_infos = $recupUser->fetch()){
         $_SESSION['user'] = $donnees_infos->iduser;
+        $_SESSION['mail'] = $donnees_infos->mail;
         header("location:../../home.php");
     }else{
        $n = "L'adresse mail ou/et Mot de passe incorrect";
