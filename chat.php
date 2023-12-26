@@ -36,7 +36,7 @@ if (isset($_SESSION['user'])) {
 				</p>
 
 				<p class="ltext border rounded p-2 mb-1" style="width: 65%; background: #3289c8; color: #444;">
-					Bonjour Mr <small class="d-block" style="text-align:#fff;">12:00</small>
+					Bonjour Mr <small class="d-block" style="text-align:#fff;">12:02</small>
 				</p>
 			</div>
 
