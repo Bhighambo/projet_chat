@@ -30,6 +30,16 @@ if (isset($_SESSION['user'])) {
 				
 			</div>
 
+			<div class="shadow p-4 rounded d-flex flex-column mt-2 h-50 chat-box">
+				<p class="rtext align-self-end border rounded p-2 mb-1" style="width: 65%; background: #f8f9fa; color: #444;">
+					Bonjour Mr <small class="d-block" style="text-align:right;">12:00</small>
+				</p>
+
+				<p class="ltext border rounded p-2 mb-1" style="width: 65%; background: #3289c8; color: #444;">
+					Bonjour Mr <small class="d-block" style="text-align:#fff;">12:00</small>
+				</p>
+			</div>
+
 		</div>
 
     </body>
