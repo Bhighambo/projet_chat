@@ -1,6 +1,25 @@
 <?php include "bdd/connexion.php"; ?>
 <?php 
 if (isset($_SESSION['user'])) {
+
+	include "app/utilisateurs/conversation.php";
+	include "app/utilisateurs/timeAgo.php";
+
+	if(!isset($_GET['user'])){
+		header("location:home.php");
+		exit;
+	}
+
+	$chatwith = getconversation($_GET['user'], $bdd);
+
+	$recupUser = $bdd->prepare("SELECT * FROM utilisateur where iduser=?");
+	$recupUser->execute([$_GET['user']]);
+	$infos = $recupUser->fetch();
+
+	if(empty($chatwith)){
+		header("location:home.php");
+		exit;
+	}
  ?>
 <!DOCTYPE html>
  <html>
@@ -20,11 +39,22 @@ if (isset($_SESSION['user'])) {
 			<a href="home.php" class="fs-4 link-dark">&#8592;</a>
 
 			<div class="d-flex align-items-center">
-				<img src="photos/CESAR_20221124_170550.jpg" class="rounded-circle" style="width:10%">
+				<img src="photos/<?php echo $infos->photo; ?>" class="rounded-circle" style="width:10%">
 				<h3 class="display-4 fs-sm m-2" style="font-size:20px;">
-					JACKSON <br>
-					<div class="d-flex align-items-center" title="online">
-						<div class="online"></div><small style="color:#bbb; font-size:0.7rem; " class="d-block p-1">En ligne</small>
+					<?php echo $infos->nom." ".$infos->postnom; ?> <br>
+					<div class="d-flex align-items-center" title="En ligne">
+						<?php if (last_seen($infos->dateI) == "Active") {
+							?>
+							<div class="online"></div><small style="color:#bbb; font-size:0.7rem; " class="d-block p-1">En ligne</small>
+
+							<?php
+						}else{
+							?>
+							<small style="color:#bbb; font-size:0.7rem; " class="d-block p-1"><?php echo $infos->dateI; ?></small>
+
+							<?php
+						}
+						?>
 					</div>
 				</h3>
 				
