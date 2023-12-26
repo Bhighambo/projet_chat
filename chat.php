@@ -30,17 +30,64 @@ if (isset($_SESSION['user'])) {
 				
 			</div>
 
-			<div class="shadow p-4 rounded d-flex flex-column mt-2 h-50 chat-box">
+			<div class="shadow p-4 rounded d-flex flex-column mt-2 chat-box" id="chatBox" style="overflow-y: auto; max-height: 50vh;">
 				<p class="rtext align-self-end border rounded p-2 mb-1" style="width: 65%; background: #f8f9fa; color: #444;">
 					Bonjour Mr <small class="d-block" style="text-align:right;">12:00</small>
 				</p>
 
-				<p class="ltext border rounded p-2 mb-1" style="width: 65%; background: #3289c8; color: #444;">
+				<p class="ltext border rounded p-2 mb-1" style="width: 65%; background: #3289c8; color: #fff;">
 					Bonjour Mr <small class="d-block" style="text-align:#fff;">12:02</small>
 				</p>
+				<p class="rtext align-self-end border rounded p-2 mb-1" style="width: 65%; background: #f8f9fa; color: #444;">
+					Bonjour Mr <small class="d-block" style="text-align:right;">12:00</small>
+				</p>
+
+				<p class="ltext border rounded p-2 mb-1" style="width: 65%; background: #3289c8; color: #fff;">
+					Bonjour Mr <small class="d-block" style="text-align:#fff;">12:02</small>
+				</p>
+				<p class="rtext align-self-end border rounded p-2 mb-1" style="width: 65%; background: #f8f9fa; color: #444;">
+					Bonjour Mr <small class="d-block" style="text-align:right;">12:00</small>
+				</p>
+
+				<p class="ltext border rounded p-2 mb-1" style="width: 65%; background: #3289c8; color: #fff;">
+					Bonjour Mr <small class="d-block" style="text-align:#fff;">12:02</small>
+				</p>
+				<p class="rtext align-self-end border rounded p-2 mb-1" style="width: 65%; background: #f8f9fa; color: #444;">
+					Bonjour Mr <small class="d-block" style="text-align:right;">12:00</small>
+				</p>
+
+				<p class="ltext border rounded p-2 mb-1" style="width: 65%; background: #3289c8; color: #fff;">
+					Bonjour Mr <small class="d-block" style="text-align:#fff;">12:02</small>
+				</p>
+				<p class="rtext align-self-end border rounded p-2 mb-1" style="width: 65%; background: #f8f9fa; color: #444;">
+					Bonjour Mr <small class="d-block" style="text-align:right;">12:00</small>
+				</p>
+
+				<p class="ltext border rounded p-2 mb-1" style="width: 65%; background: #3289c8; color: #fff;">
+					Bonjour Mr <small class="d-block" style="text-align: right;">12:02</small>
+				</p>
+			</div>
+			<div class="input-group mb-3">
+				<textarea name="" cols="3" class="form-control" style="resize: none;"></textarea>
+				<button class="btn btn-primary"><i class="fa fa-paper-plane"></i></button>
 			</div>
 
 		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
+
+	<script>
+		var scrollDown = function(){
+			let chatBox = document.getElementById('chatBox');
+			chatBox.scrollTop = chatBox.scollHeight;
+		}
+		scrollDown();
+
+		$(document).ready(function(){
+
+			
+
+		});
+	</script>
 
     </body>
 </html>
