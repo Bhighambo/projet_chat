@@ -52,10 +52,10 @@ if (isset($_SESSION['user'])) {
 									</div>
 									<?php 
 
-									if (last_seen($conversations->dateI) == 'Active') {
+									if (last_seen($conversations->dateI) == "Active") {
 										?>
-										<div title="online">
-										    <div class="online"></div>
+										<div title="En ligne">
+										    <div class="online">En ligne</div>
 									    </div>
 
 										<?php
